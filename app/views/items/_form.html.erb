@@ -1,0 +1,35 @@
+<%= form_for item, :html => { :multipart => true }  do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title , :class=>"mr-5" %>
+    <%= form.text_field :title, id: :item_title, :class=>"ml-1" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, :class=>"mr-1 mb-2" %>
+    <%= form.text_area :description, id: :item_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost ,:class=>"mr-5" %>
+    <%= form.number_field :cost, id: :item_cost %>
+  </div>
+  <div clas="field">
+    <%= form.file_field :photo %>
+  <div>
+    <hr>
+  <div class="actions btn btn-success">
+    <%= form.submit %>
+  </div>
+<% end %>

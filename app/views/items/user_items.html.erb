@@ -1,0 +1,78 @@
+<% if (@items.to_a).length > 0 %>
+  <h3>Active Items</h3>
+  <div class="container-fluid">
+    <div class="row">
+      <% a = 0 %>
+      <% @items.each do |item| %>
+          <div class="col"  style="padding :1%;border-style:dotted;border-width:1px;">
+            <center><%= image_tag item.photo.url(:small) ,class: "img-fluid" %></center>
+            <div style="margin-left:8%;">
+              <strong>Title :</strong><%= item.title %><br>
+              <strong>Description</strong><%= item.description %><br>
+              <strong>cost : Rs. </strong><%= item.cost %><br>
+              <%= link_to 'Show', item , :class=>"btn btn-info mr-3 btn-sm" %>
+              <%= link_to 'destroy' , item , :method=>:delete,  :class=>"btn btn-danger btn-sm mr-3" %>
+              <%= link_to 'Sold', Sold_items_path(item) ,:class=>"btn btn-success btn-sm" %>
+            </div>
+          </div>
+          <% a = a + 1%>
+          <% if a == 4 %>
+            <% a = 0 %>
+            <div class="w-100"></div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% if (@Reitem.to_a).length > 0 %>
+<h3>Requested Items</h3>
+  <div class="container-fluid" id="sold">
+    <div class="row">
+      <% a = 0 %>
+      <% @Reitem.each do |item| %>
+          <div class="col"  style="padding :1%;border-style:dotted;border-width:1px;">
+            <center><%= image_tag item.photo.url(:small) ,class: "img-fluid" %></center>
+            <div style="margin-left:8%;">
+              <strong>Title :</strong><%= item.title %><br>
+              <strong>Description</strong><%= item.description %><br>
+              <strong>cost : Rs. </strong><%= item.cost %><br>
+              <%= link_to 'Show', item , :class=>"btn btn-info mr-3 btn-sm" %>
+              <%= link_to 'destroy' , item , :method=>:delete,  :class=>"btn btn-danger btn-sm mr-3" %>
+            </div>
+          </div>
+          <% a = a + 1%>
+          <% if a == 4 %>
+            <% a = 0 %>
+            <div class="w-100"></div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% if (@item.to_a).length > 0 %>
+<h3>Sold Items</h3>
+  <div class="container-fluid" id="sold">
+    <div class="row">
+      <% a = 0 %>
+      <% @item.each do |item| %>
+          <div class="col"  style="padding :1%;border-style:dotted;border-width:1px;">
+            <center><%= image_tag item.photo.url(:small) ,class: "img-fluid" %></center>
+            <div style="margin-left:8%;">
+              <strong>Title :</strong><%= item.title %><br>
+              <strong>Description</strong><%= item.description %><br>
+              <strong>cost : Rs. </strong><%= item.cost %><br>
+              <%= link_to 'Show', item , :class=>"btn btn-info mr-3 btn-sm" %>
+              <%= link_to 'destroy' , item , :method=>:delete,  :class=>"btn btn-danger btn-sm mr-3" %>
+            </div>
+          </div>
+          <% a = a + 1%>
+          <% if a == 4 %>
+            <% a = 0 %>
+            <div class="w-100"></div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

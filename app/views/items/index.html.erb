@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <h1>Items</h1>
+  <div class="row">
+    <% a = 0 %>
+    <% @items.each do |item| %>
+        <div class="col"  style="padding :1%;border-style:dotted;border-width:1px;">
+          <center class="p-2"><%= image_tag item.photo.url(:small) ,class: "img-fluid" %></center>
+          <div class="ml-5">
+            <strong>Title : </strong><%= item.title %><br>
+            <strong>Description : </strong><%= item.description %><br>
+            <strong>cost : Rs. </strong><%= item.cost %><br>
+            <% current = User.find(item.user_id) %>
+            <strong>Owner : </strong><%= current.first_name %> <%= current.last_name %><br>
+            <strong>Contact Details : </strong><br>
+            <div class="ml-3" >
+              <strong>Phone Number : </strong><%= current.phone_number %><br>
+              <strong>Email-id : </strong><%= current.email %><br>
+            </div>
+            <hr>
+            <%= link_to 'Show', item , :class=>"btn btn-info mr-3 btn-sm" %>
+            <% if current_user %>
+              <% if current_user.id == item.user_id %>
+                <%= link_to 'destroy' , item , :method=>:delete,  :class=>"btn btn-danger btn-sm mr-3" %>
+                <%= link_to 'Sold', Sold_items_path(item) ,:class=>"btn btn-success btn-sm mr-3" %>
+              <% end %>
+            <% end %>
+            <% if item.isRequested %>
+              <i>an User has already requested for the product.....</i>
+            <% else %>
+              <% if current_user.id != item.user_id %>
+                <%= link_to 'Request', requested_items_path(item) , :class=>"btn btn-primary btn-sm" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <% a = a + 1%>
+        <% if a == 4 %>
+          <% a = 0 %>
+          <div class="w-100"></div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+
+<div class="container-fluid" style="padding:6%">
+  <div class="row">
+    <strong>Name : </strong><%= @user.first_name %> <%= @user.last_name %>
+  </div>
+  <hr>
+  <div class="row">
+    <strong>Phone Number : </strong><%= @user.phone_number %>
+  </div>
+  <hr>
+  <div class="row">
+    <strong>email : </strong><%= @user.email %>
+  </div>
+  <hr>
+  <div class="row">
+    <%= link_to 'Back' , items_path , :class=>"btn btn-success mr-3" %>  <%= link_to 'My Items' , user_items_items_path , :class=>"btn btn-primary" %>
+    <%= link_to 'edit' , edit_user_registration_path ,:class=>"btn btn-success ml-3" %>
+  </div>
+</div>
