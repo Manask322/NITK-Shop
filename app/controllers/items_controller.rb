@@ -28,6 +28,9 @@ class ItemsController < ApplicationController
   end
 
   def requested
+    if !current_user
+      redirect_to new_user_session_path , notice: "Log in to request an item"
+    end
     item = Item.find(params[:id])
     item.update(:isRequested=>true)
     redirect_to items_url , notice: "Item Requested"

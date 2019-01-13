@@ -27,9 +27,13 @@
             <% if item.isRequested %>
               <i>an User has already requested for the product.....</i>
             <% else %>
-              <% if current_user.id != item.user_id %>
-                <%= link_to 'Request', requested_items_path(item) , :class=>"btn btn-primary btn-sm" %>
-              <% end %>
+                <% if current_user %>
+                  <% if current_user.id != item.user_id %>
+                    <%= link_to 'Request', requested_items_path(item) , :class=>"btn btn-primary btn-sm" %>
+                  <% end %>
+                <% else %>
+                    <%= link_to 'Request', requested_items_path(item) , :class=>"btn btn-primary btn-sm" %>
+                <% end %>
             <% end %>
           </div>
         </div>
