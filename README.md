@@ -5,6 +5,9 @@ A simple e-commerce website for NITK students.
 rails v. 5.1.5<br>
 ruby v. 2.3.x<br>
 
+#github link
+https://github.com/Manask322/NITK-Shop<br>
+
 ## Procedure :<br>
 > `git clone git@github.com:Manask322/NITK-Shop.git`<br>
 > `cd NITK-SHOP`<br>
@@ -25,6 +28,6 @@ ruby v. 2.3.x<br>
    prospective users can contact the seller.<br>
 9. Uploaded item to sell have images, title, description, expected cost to sell.<br>
 
-## References 
+## References
 Various tutorials and websites.
 <a href="https://docs.google.com/document/d/1FXf6JP-BejucvsqzMnyhq_vFhD40_nV6-367Y_yzac4/edit?usp=sharing">Error Document</a>
