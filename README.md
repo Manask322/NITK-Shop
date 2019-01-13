@@ -27,3 +27,4 @@ ruby v. 2.3.x<br>
 
 ## References 
 Various tutorials and websites.
+<a href=https://docs.google.com/document/d/1FXf6JP-BejucvsqzMnyhq_vFhD40_nV6-367Y_yzac4/edit?usp=sharing">Error Document</a>
